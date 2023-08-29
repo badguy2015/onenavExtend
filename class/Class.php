@@ -91,6 +91,8 @@ function get_http_code($url) {
 function UGet($Name){ global $udb; return $udb->get("config","Value",["Name"=>$Name]); }
 //订阅验证
 function is_subscribe($Bool = false){
+    // 学习使用,暂时开放订阅
+    return true;
     global $udb;$msg = '';
     $subscribe = unserialize($udb->get("config","Value",["Name"=>'s_subscribe']));
     $data['host'] = $_SERVER['HTTP_HOST']; //当前域名
